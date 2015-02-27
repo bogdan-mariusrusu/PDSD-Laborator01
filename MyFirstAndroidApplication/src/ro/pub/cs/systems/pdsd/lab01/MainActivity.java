@@ -22,7 +22,12 @@ public class MainActivity extends Activity {
 		@Override
 		public void onClick(View view) {
 			EditText userNameEditText = (EditText)findViewById(R.id.user_name_edit_text);
-			TextView greetingTextView = (TextView)findViewById(R.id.greeting_text_view);
+			TextView greetingTextView = (TextView)findViewById(R.id.greeting_text_view );
+			CharSequence myCharSequence = greetingTextView.getText();
+			String myString = myCharSequence.toString( ) ;
+			myString = myString.replace( "xxx", userNameEditText.getText()) ;
+			myCharSequence = myString.toString() ;
+			greetingTextView.setText( myCharSequence ) ;			
 			greetingTextView.setAlpha(1);
 		}
 		
